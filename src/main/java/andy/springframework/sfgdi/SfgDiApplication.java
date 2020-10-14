@@ -1,5 +1,6 @@
 package andy.springframework.sfgdi;
 
+import andy.springframework.sfgdi.controllers.ConstructorInjectionController;
 import andy.springframework.sfgdi.controllers.MyController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +16,12 @@ public class SfgDiApplication {
         String greeting = myController.sayHello();
 
         System.out.println(greeting);
+
+
+        ConstructorInjectionController constructorInjectionController =
+                (ConstructorInjectionController) ctx.getBean("constructorInjectionController");
+
+        System.out.println(constructorInjectionController.sayGreeting());
     }
 
 }
